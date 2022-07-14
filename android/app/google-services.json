@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "272960105015",
+    "project_id": "personal-expanses",
+    "storage_bucket": "personal-expanses.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272960105015:android:6d1e314f88a91901932db2",
+        "android_client_info": {
+          "package_name": "com.example.personal_expanses"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "272960105015-im9kgfqtpfcjct785ep2v1m7tmkclsn5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzhVKvfsFlDYcyIYuMmvtLmFrES6IID_4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "272960105015-im9kgfqtpfcjct785ep2v1m7tmkclsn5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

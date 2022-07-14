@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import './models/transactions_json.dart';
+//import 'package:flutter/services.dart';
 import './widgets/new_transactions.dart';
 import './widgets/transaction_list.dart';
 import './widgets/chart.dart';
@@ -7,10 +8,9 @@ import './models/transaction.dart';
 
 void main() {
   // WidgetsFlutterBinding.ensureInitialized();
-  // SystemChrome.setPreferredOrientations([
-  //   DeviceOrientation.portraitUp,
-  //   DeviceOrientation.portraitDown,
-  // ]);
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
   runApp(MyApp());
 }
 
@@ -70,15 +70,24 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _addNewTransaction(String txTittle, double txAmount, DateTime txDate) {
     final newTx = Transaction(
+      id: DateTime.now().toString(),
       tittle: txTittle,
       amount: txAmount,
       date: txDate,
-      id: DateTime.now().toString(),
     );
 
     setState(() {
       _userTransactions.add(newTx);
     });
+
+    // try {
+    //   var txJSON = Transactionsjson(_userTransactions).toJson();
+    //   print(txJSON);
+    // } catch (e) {
+    //   print(e);
+    // }
+
+    // TODO: async function uploading to the firebase
   }
 
   void _startAddNewTransaction(BuildContext ctx) {
@@ -120,6 +129,8 @@ class _MyHomePageState extends State<MyHomePage> {
           0.7,
       child: TransactionList(_userTransactions, _deleteTransaction),
     );
+
+    // TODO: async function download tx from firebase
 
     return Scaffold(
       appBar: appBar,
